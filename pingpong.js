@@ -81,7 +81,7 @@ const ball = new Ball({
         x:(canvas.width/2)-50,
         y:(canvas.height/2)-50
     },
-    speed: 6
+    speed: 10
 })
 
 const keys = {
@@ -165,8 +165,8 @@ function movement(dt){
         ball.position.x = (canvas.width/2)-50
         ball.position.y = (canvas.height/2)-50
         getRandomDirection()
-        player1.score += 1
-        ball.speed = 6
+        player1.score += 1.5
+        ball.speed = 10
         text.innerText = (String(player1.score) + '-' + String(player2.score))
     }
 
@@ -174,8 +174,8 @@ function movement(dt){
         ball.position.x = (canvas.width/2)-50
         ball.position.y = (canvas.height/2)-50
         getRandomDirection()
-        player2.score += 1
-        ball.speed = 6
+        player2.score += 1.5
+        ball.speed = 10
         text.innerText = (String(player1.score) + '-' + String(player2.score))
         
     }
@@ -220,3 +220,4 @@ function gameLoop(timestamp){
 
 
 gameLoop()
+
