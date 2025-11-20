@@ -183,14 +183,14 @@ function movement(dt){
     if((ball.position.x <= player1.position.x+player1.width || ball.position.x + ball.width <= player1.position.x+player1.width) && (ball.position.y + 50 >= player1.position.y && ball.position.y <= player1.position.y + player1.height)){
         direction.x *= -1;
         if(ball.speed <= 7){
-            ball.speed+=2
+            ball.speed+=5
         }
     }
 
     if((ball.position.x + ball.width >= player2.position.x || ball.position.x >= player2.position.x) && (ball.position.y + 50 >= player2.position.y && ball.position.y <= player2.position.y + player2.height)){
         direction.x *= -1;
         if(ball.speed <= 7){
-            ball.speed+=2
+            ball.speed+=5
         }
     }
     
@@ -220,5 +220,6 @@ function gameLoop(timestamp){
 
 
 gameLoop()
+
 
 
