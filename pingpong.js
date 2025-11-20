@@ -81,7 +81,7 @@ const ball = new Ball({
         x:(canvas.width/2)-50,
         y:(canvas.height/2)-50
     },
-    speed: 3
+    speed: 6
 })
 
 const keys = {
@@ -166,7 +166,7 @@ function movement(dt){
         ball.position.y = (canvas.height/2)-50
         getRandomDirection()
         player1.score += 1
-        ball.speed = 3
+        ball.speed = 6
         text.innerText = (String(player1.score) + '-' + String(player2.score))
     }
 
@@ -175,7 +175,7 @@ function movement(dt){
         ball.position.y = (canvas.height/2)-50
         getRandomDirection()
         player2.score += 1
-        ball.speed = 3
+        ball.speed = 6
         text.innerText = (String(player1.score) + '-' + String(player2.score))
         
     }
@@ -183,14 +183,14 @@ function movement(dt){
     if((ball.position.x <= player1.position.x+player1.width || ball.position.x + ball.width <= player1.position.x+player1.width) && (ball.position.y + 50 >= player1.position.y && ball.position.y <= player1.position.y + player1.height)){
         direction.x *= -1;
         if(ball.speed <= 7){
-            ball.speed+=0.5
+            ball.speed+=1
         }
     }
 
     if((ball.position.x + ball.width >= player2.position.x || ball.position.x >= player2.position.x) && (ball.position.y + 50 >= player2.position.y && ball.position.y <= player2.position.y + player2.height)){
         direction.x *= -1;
         if(ball.speed <= 7){
-            ball.speed+=0.5
+            ball.speed+=1
         }
     }
     
@@ -217,5 +217,6 @@ function gameLoop(timestamp){
     player2.update();
     ball.update();
 }
+
 
 gameLoop()
