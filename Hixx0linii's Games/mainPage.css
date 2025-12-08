@@ -1,0 +1,9 @@
+.game,div{
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}

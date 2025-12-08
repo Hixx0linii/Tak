@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedle</title>
+    <link rel="stylesheet" href="stylePokedle.css">
+</head>
+<body>
+    <div id="button1" class="gui">
+        <input type="button" onclick="checkAnswers()" value="Guess" style="width: 150px; height: 40px; font-size: x-large;padding: 0%; margin: 0%;border: 0%;margin-right: 10px;">
+        <input type="button" onclick="randomPokedex()" value="Random" style="width: 150px; height: 40px; font-size: x-large;padding: 0%; margin: 0%;border: 0%;"><br><br>
+        <div class="container">
+            <input id="currentGuess" placeholder="Type pokemons's name" style="width: 315px; height: 40px; padding: 0%; margin: 0%;border: 0%; margin-right: 10px; font-size: x-large; text-align: center; box-sizing: border-box;">
+            <div id="suggestions"></div>
+        </div>
+    </div>
+    <div id="buttongen" class="gui">
+        <button id="gen1" onclick="getFinalPokedex(1); randomPokedex()">
+            <img src="./assets/gen1.png" style="width: 120px; height: 40px;" alt="Gen 1"> Gen1
+        </button>
+        <button id="gen2" onclick="getFinalPokedex(2); randomPokedex()">
+            <img src="./assets/gen2.png" alt="Gen 2"> Gen2
+        </button>
+        <button id="gen3" onclick="getFinalPokedex(3); randomPokedex()">
+            <img src="./assets/gen3.png" alt="Gen 3"> Gen3
+        </button>
+        <button id="gen4" onclick="getFinalPokedex(4); randomPokedex()">
+            <img src="./assets/gen4.png" alt="Gen 4"> Gen4
+        </button>
+        <button id="gen5" onclick="getFinalPokedex(5); randomPokedex()">
+            <img src="./assets/gen5.png" alt="Gen 5"> Gen5
+        </button>
+        <button id="gen6" onclick="getFinalPokedex(6); randomPokedex()">
+            <img src="./assets/gen6.png" alt="Gen 6"> Gen6
+        </button>
+        <button id="gen7" onclick="getFinalPokedex(7); randomPokedex()">
+            <img src="./assets/gen7.png" alt="Gen 7"> Gen7
+        </button>
+        <button id="gen8" onclick="getFinalPokedex(8); randomPokedex()">
+            <img src="./assets/gen8.png" alt="Gen 8"> Gen8
+        </button>
+        <button id="gen9" onclick="getFinalPokedex(9); randomPokedex()">
+            <img src="./assets/gen9.png" alt="Gen 9"> Gen9
+        </button>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+    <div id="categories" class="guess-row" style="text-align: center; font-size: xx-large;">
+        <a style="background-color: gray;"><b>Pokemon</b></a>
+        <a style="background-color: gray;"><b>Type 1</b></a>
+        <a style="background-color: gray;"><b>Type 2</b></a>
+        <a style="background-color: gray;"><b>Ability</b></a>
+        <a style="background-color: gray;"><b>Color</b></a>
+        <a style="background-color: gray;"><b>Evolution stage</b></a>
+        <a style="background-color: gray;"><b>Fully evolved</b></a>
+        <a style="background-color: gray;"><b>Generation</b></a>
+    </div>
+    <div id="guesses"></div>
+    <script src="./pokedex.js"></script>
+    <script src="./scriptPokedle.js"></script>
+</body>
+</html>
+<!--  type="module" -->
