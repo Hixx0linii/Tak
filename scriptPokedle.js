@@ -1,4 +1,4 @@
-const pokedex = getPokedex().pokedexKanto
+const pokedex = getFinalPokedex().finalPokedex
 
 // console.log(pokedex)  //for test
 let randPokedexIndex; 

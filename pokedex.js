@@ -1,3 +1,47 @@
+gen1Toggle = true
+gen2Toggle = true
+gen3Toggle = true
+gen4Toggle = true
+gen5Toggle = true
+gen6Toggle = true
+gen7Toggle = true
+gen8Toggle = true
+gen9Toggle = true
+
+function pokedexEnabler(pokedex){
+    switch(pokedex){
+        case 1:
+            gen1Toggle = !gen1Toggle
+            console.log(gen1Toggle)
+            break;
+        case 2:
+            gen2Toggle = !gen2Toggle
+            break;
+        case 3:
+            gen3Toggle = !gen3Toggle
+            break;
+        case 4:
+            gen4Toggle = !gen4Toggle
+            break;
+        case 5:
+            gen5Toggle = !gen5Toggle
+            break;
+        case 6:
+            gen6Toggle = !gen6Toggle
+            break;
+        case 7:
+            gen7Toggle = !gen7Toggle
+            break;
+        case 8:
+            gen8Toggle = !gen8Toggle
+            break;
+        case 9:
+            gen9Toggle = !gen9Toggle
+            break; 
+    }
+    getFinalPokedex()
+}
+
 function getPokedex(){
     //gen 1  TODO
     const pokedexKanto = [
@@ -1058,5 +1102,84 @@ function getPokedex(){
         {name: 'terapagos', type1: 'normal', type2: 'none', ability: ['tera shift'], color: ['blue'], stage: 1, fullyEvolved: true, gen: 9, guessed: false }, // #1024
         {name: 'pecharunt', type1: 'poison', type2: 'ghost', ability: ['poison puppeteer'], color: ['purple'], stage: 1, fullyEvolved: true, gen: 9, guessed: false } // #1025
     ];
-    return {pokedexKanto}
+
+    return {pokedexKanto,pokedexAlola,pokedexGalarHisui,pokedexHoenn,pokedexJohto,pokedexKalos,pokedexPaldea,pokedexSinnoh,pokedexUnova}
+}
+
+function getFinalPokedex(){    
+    const finalPokedex = []
+    if(gen1Toggle){
+        button1 = document.getElementById("gen1")
+        button1.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexKanto.length; i++){
+            finalPokedex.push(getPokedex().pokedexKanto[i])
+        }
+    }
+    else{button1.style.backgroundColor = 'red'}
+    if(gen2Toggle){
+        button2 = document.getElementById("gen2")
+        button2.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexJohto.length; i++){
+            finalPokedex.push(getPokedex().pokedexJohto[i])
+        }
+    }
+    else{button2.style.backgroundColor = 'red'}
+    if(gen3Toggle){
+        button3 = document.getElementById("gen3")
+        button3.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexHoenn.length; i++){
+            finalPokedex.push(getPokedex().pokedexHoenn[i])
+        }
+    }
+    else{button3.style.backgroundColor = 'red'}
+    if(gen4Toggle){
+        button4 = document.getElementById("gen4")
+        button4.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexSinnoh.length; i++){
+            finalPokedex.push(getPokedex().pokedexSinnoh[i])
+        }
+    }
+    else{button4.style.backgroundColor = 'red'}
+    if(gen5Toggle){
+        button5 = document.getElementById("gen5")
+        button5.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexUnova.length; i++){
+            finalPokedex.push(getPokedex().pokedexUnova[i])
+        }
+    }
+    else{button5.style.backgroundColor = 'red'}
+    if(gen6Toggle){
+        button6 = document.getElementById("gen6")
+        button6.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexKalos.length; i++){
+            finalPokedex.push(getPokedex().pokedexKalos[i])
+        }
+    }
+    else{button6.style.backgroundColor = 'red'}
+    if(gen7Toggle){
+        button7 = document.getElementById("gen7")
+        button7.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexAlola.length; i++){
+            finalPokedex.push(getPokedex().pokedexAlola[i])
+        }
+    }
+    else{button7.style.backgroundColor = 'red'}
+    if(gen8Toggle){
+        button8 = document.getElementById("gen8")
+        button8.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexGalarHisui.length; i++){
+            finalPokedex.push(getPokedex().pokedexGalarHisui[i])
+        }
+    }
+    else{button8.style.backgroundColor = 'red'}
+    if(gen9Toggle){
+        button9 = document.getElementById("gen9")
+        button9.style.backgroundColor = 'green'
+        for(let i = 0; i<getPokedex().pokedexPaldea.length; i++){
+            finalPokedex.push(getPokedex().pokedexPaldea[i])
+        }
+    }
+    else{button9.style.backgroundColor = 'red'}
+    console.log(finalPokedex)
+    return {finalPokedex}
 }
