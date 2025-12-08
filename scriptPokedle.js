@@ -1,8 +1,6 @@
-const pokedex = getFinalPokedex().finalPokedex
-
-// console.log(pokedex)  //for test
 let randPokedexIndex; 
 function randomPokedex(){
+    const pokedex = getFinalPokedex().finalPokedex
     randPokedexIndex = Math.floor(Math.random() * pokedex.length)
     console.log(`Pokemon to guess: ${randPokedexIndex+1}`, pokedex[randPokedexIndex].name) 
 }

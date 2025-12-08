@@ -8,40 +8,6 @@ gen7Toggle = true
 gen8Toggle = true
 gen9Toggle = true
 
-function pokedexEnabler(pokedex){
-    switch(pokedex){
-        case 1:
-            gen1Toggle = !gen1Toggle
-            console.log(gen1Toggle)
-            break;
-        case 2:
-            gen2Toggle = !gen2Toggle
-            break;
-        case 3:
-            gen3Toggle = !gen3Toggle
-            break;
-        case 4:
-            gen4Toggle = !gen4Toggle
-            break;
-        case 5:
-            gen5Toggle = !gen5Toggle
-            break;
-        case 6:
-            gen6Toggle = !gen6Toggle
-            break;
-        case 7:
-            gen7Toggle = !gen7Toggle
-            break;
-        case 8:
-            gen8Toggle = !gen8Toggle
-            break;
-        case 9:
-            gen9Toggle = !gen9Toggle
-            break; 
-    }
-    getFinalPokedex()
-}
-
 function getPokedex(){
     //gen 1  TODO
     const pokedexKanto = [
@@ -1106,8 +1072,38 @@ function getPokedex(){
     return {pokedexKanto,pokedexAlola,pokedexGalarHisui,pokedexHoenn,pokedexJohto,pokedexKalos,pokedexPaldea,pokedexSinnoh,pokedexUnova}
 }
 
-function getFinalPokedex(){    
+function getFinalPokedex(pokedex){    
     const finalPokedex = []
+    switch(pokedex){
+        case 1:
+            gen1Toggle = !gen1Toggle
+            console.log(gen1Toggle)
+            break;
+        case 2:
+            gen2Toggle = !gen2Toggle
+            break;
+        case 3:
+            gen3Toggle = !gen3Toggle
+            break;
+        case 4:
+            gen4Toggle = !gen4Toggle
+            break;
+        case 5:
+            gen5Toggle = !gen5Toggle
+            break;
+        case 6:
+            gen6Toggle = !gen6Toggle
+            break;
+        case 7:
+            gen7Toggle = !gen7Toggle
+            break;
+        case 8:
+            gen8Toggle = !gen8Toggle
+            break;
+        case 9:
+            gen9Toggle = !gen9Toggle
+            break; 
+    }
     if(gen1Toggle){
         button1 = document.getElementById("gen1")
         button1.style.backgroundColor = 'green'
@@ -1180,6 +1176,7 @@ function getFinalPokedex(){
         }
     }
     else{button9.style.backgroundColor = 'red'}
-    console.log(finalPokedex)
+    console.log(finalPokedex.length)
+
     return {finalPokedex}
 }
